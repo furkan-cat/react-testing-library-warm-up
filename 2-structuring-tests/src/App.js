@@ -1,7 +1,7 @@
-import Jumbotron from "./jumbotron";
+import Jumbotron from "./components/jumbotron";
 import fakeEmployees from "./mocks/employees";
-import Table from "./table";
-import Travel from "./travel";
+import Table from "./components/table";
+import Travel from "./components/travel";
 
 function App() {
   return (

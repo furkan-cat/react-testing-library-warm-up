@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import * as React from "react";
+import { useReducer } from "react";
 import thumbsDown from "../images/thumbs-down.svg";
 import thumbsUp from "../images/thumbs-up.svg";
 
@@ -24,7 +24,7 @@ const Vote = ({ totalGlobalLikes = 10 }) => {
         return state;
     }
   };
-  const [state, dispatch] = React.useReducer(likeReducer, {
+  const [state, dispatch] = useReducer(likeReducer, {
     totalLikes: totalGlobalLikes,
     hasVoted: false,
   });
@@ -34,7 +34,7 @@ const Vote = ({ totalGlobalLikes = 10 }) => {
   const handleDislikeVote = () => dispatch({ type: "DISLIKE" });
 
   return (
-    <div className="d-flex d-inline-flex flex-column h1 m-2">
+    <div>
       <h5>Note: You are not allowed to change your vote once selected!</h5>
       <button
         onClick={handleLikeVote}

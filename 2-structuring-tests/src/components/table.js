@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Table = (props) => {
   return (
-    <table className="table table-striped">
-      <thead className="thead-dark">
+    <table className="table">
+      <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Department</th>

@@ -36,28 +36,20 @@ const DrinkSearch = () => {
 
     return drinks.map((drink) => {
       return (
-        <div
-          key={drink.idDrink}
-          className="card m-2"
-          style={{ width: "20rem" }}
-        >
-          <img
-            src={drink.strDrinkThumb}
-            className="card-img-top"
-            alt={drink.strDrink}
-          />
-          <div className="card-body">
-            <h5 className="card-title text-center">{drink.strDrink}</h5>
-            <h6 className="text-center font-weight-bold">Ingredients</h6>
-            <div className="d-flex flex-wrap justify-content-center border-top">
+        <div key={drink.idDrink} style={{ width: "20rem" }}>
+          <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+          <div>
+            <h5>{drink.strDrink}</h5>
+            <h6>Ingredients</h6>
+            <div>
               {ingredientList(drink).map((ingredient, index) => (
                 <div className="p-1" key={ingredient + index}>
                   {ingredient}
                 </div>
               ))}
             </div>
-            <h6 className="text-center font-weight-bold">Instructions</h6>
-            <p className="card-text border-top">{drink.strInstructions}</p>
+            <h6>Instructions</h6>
+            <p>{drink.strInstructions}</p>
           </div>
         </div>
       );
@@ -65,22 +57,19 @@ const DrinkSearch = () => {
   };
 
   return (
-    <div className="container">
-      <form className="form-group m-auto w-50 pt-2" onSubmit={handleDrinkQuery}>
+    <div>
+      <form onSubmit={handleDrinkQuery}>
         <input
-          className="form-control"
           placeholder="search for a drink..."
           type="search"
           value={drinkQuery}
           onChange={(event) => setDrinkQuery(event.target.value)}
         />
-        <button className="btn btn-primary mt-2 btn-block" type="submit">
-          Search
-        </button>
+        <button type="submit">Search</button>
       </form>
-      {drinks && <div className="d-flex flex-wrap">{drinkResults()}</div>}
-      {!drinks && <h5 className="text-center mt-5">🍹 No drinks found 🍹</h5>}
-      {error && <h5 className="text-center mt-5">🛑 Service unavailable 🛑</h5>}
+      {drinks && <div>{drinkResults()}</div>}
+      {!drinks && <h5>🍹 No drinks found 🍹</h5>}
+      {error && <h5>🛑 Service unavailable 🛑</h5>}
     </div>
   );
 };

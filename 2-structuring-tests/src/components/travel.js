@@ -1,11 +1,9 @@
 export default function Travel() {
   return (
-    <div className="card text-center m-1" style={{ width: "18rem" }}>
-      <i className="material-icons" style={{ fontSize: "4rem" }}>
-        airplanemode_active
-      </i>
+    <div style={{ width: "18rem" }}>
+      <i style={{ fontSize: "4rem" }}>airplanemode_active</i>
       <h4>Travel Anywhere</h4>
-      <p className="p-1">
+      <p>
         Our premium package allows you to take exotic trips anywhere at the
         cheapest prices!
       </p>
